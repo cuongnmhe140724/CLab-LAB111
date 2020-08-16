@@ -33,14 +33,14 @@ int main(int argc, char** argv) {
         gets(s);
         fpurge(stdin);
         printf("\nThe old string:  %s",s);
-        for (int i = strlen(s); i >= 0; i--) {
-            if (s[i] == demiter) {
+        for (int i = strlen(s); i >= 0; i--) { //duyet qua string s
+            if (s[i] == demiter) { // neu gap dau cach thì cat tu vi tri trc dau cach và gan vao newS
                 strcat(newS, &s[i + 1]);
                 strcat(newS, strDemiter);
                 s[i] = 0; //sau khi cat string s noi vao newS thi cho dau ngat vao vi tri vua cat cua s
             }
         }
-        strcat(newS, s);
+        strcat(newS, s); // gan not tu cuoi cung cua day s vao newS
         printf("\nThe reversed string:  %s\n", newS);
         printf("Press enter to continue another reverse, ESC to exit");
         key = getchar();
