@@ -37,7 +37,7 @@ int main(int argc, char** argv) {
             if (s[i] == demiter) {
                 strcat(newS, &s[i + 1]);
                 strcat(newS, strDemiter);
-                s[i] = 0;
+                s[i] = 0; //sau khi cat string s noi vao newS thi cho dau ngat vao vi tri vua cat cua s
             }
         }
         strcat(newS, s);
@@ -45,7 +45,7 @@ int main(int argc, char** argv) {
         printf("Press enter to continue another reverse, ESC to exit");
         key = getchar();
         if (key == 27) break;
-        newS[0] = 0;
+        newS[0] = 0; // neu nguoi dung chon continue thi cai nay dung de xoa chuoi newS
     } while (1);
     return 0;
 }
