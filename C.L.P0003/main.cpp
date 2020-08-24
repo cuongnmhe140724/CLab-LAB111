@@ -41,8 +41,8 @@ int getInt(int min, int max) {
 //ham dung de luu game vao file
 void saveGame(float value, char fileName[]) {
     FILE *fp;
-    fp = fopen(fileName,"w");
-    fprintf(fp, "%f", value);
+    fp = fopen(fileName,"w"); // mở file với chế độ ghi w = write
+    fprintf(fp, "%f", value); //ghi gtri value vào file
     fclose(fp);
 }
 // de doc file lay gia tri diem đã đc lưu
