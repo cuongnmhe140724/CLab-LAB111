@@ -70,8 +70,8 @@ float loadGame(char fileName[]) {
 float playGame() {
     float value = 0;
     int numbers[3];
-    srand(time(NULL));
-    numbers[0] = rand() % 10;
+    srand(time(NULL));  //khởi tạo bộ sinh số ngẫu nhiên
+    numbers[0] = rand() % 10; // random ba số
     numbers[1] = rand() % 10;
     numbers[2] = rand() % 10;
     for (int i = 0; i < 3; i++) {
