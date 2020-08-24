@@ -38,24 +38,25 @@ int getInt(int min, int max) {
     } while (1);
     return number;
 }
+//ham dung de luu game vao file
 void saveGame(float value, char fileName[]) {
     FILE *fp;
     fp = fopen(fileName,"w");
     fprintf(fp, "%f", value);
     fclose(fp);
 }
-
+// de doc file lay gia tri diem đã đc lưu
 float loadGame(char fileName[]) {
     float value = 0.0;
     FILE *fp;
-    fp = fopen(fileName, "r");
-    if (fp == NULL) {
+    fp = fopen(fileName, "r");//đọc file
+    if (fp == NULL) {         //nếu file ko tồn tại thì tạo file mới 
         printf("\nFile '%s' does not exist!Creating file with 10$\n", fileName);
         saveGame(10.0, fileName);
         value = 10.0;
-    } else {
+    } else { //nếu file tồn tại thì đọc ạ
         fscanf(fp,"%f", &value);
-        if (value == 0) {
+        if (value == 0) { //nếu số tiền còn lại 0$ thì reset về 10
             printf("\nFile '%s' is exist!The value in file is: %.2f $ Reset money!\n",fileName,value);
             value = 10.0;
         } else {
@@ -65,7 +66,7 @@ float loadGame(char fileName[]) {
     fclose(fp);
     return value;
 }
-
+// hàm chơi game nhé bạn iu
 float playGame() {
     float value = 0;
     int numbers[3];
